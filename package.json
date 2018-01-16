@@ -1,0 +1,31 @@
+{
+  "name": "muses-wxmp-crypto-util",
+  "version": "1.0.0",
+  "description": "The REST API crypto util of Muses weixin mini-program backend service.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "node ./test/example.js"
+  },
+  "keywords": [
+    "weixin",
+    "mini-program"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "kit@muses.cc",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^3.0.0",
+    "eslint": "^4.15.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {}
+}

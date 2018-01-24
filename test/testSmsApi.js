@@ -6,7 +6,7 @@ var http = require('http');
 var qs = require('querystring');
 var data = {
     appid:'wxmp_8p9xfnhh',
-    openid:'kit'
+    mobilePhone:'18589203518'
 }
 var ts = new Date().getTime();
 console.log('ts:'+ts);
@@ -20,8 +20,8 @@ var params = qs.stringify(data);
 var options={
     hostname:'localhost',
     port:8080,
-    path:'/api/v1/identitis?'+params,
-    method:'GET',
+    path:'/api/v1/smscode?'+params,
+    method:'POST',
     headers:{
         //'Content-Type':'application/x-www-form-urlencoded',
         'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',

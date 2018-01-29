@@ -1,5 +1,7 @@
-const crypto = require('crypto');
-const md5 = crypto.createHash('md5');
+//const crypto = require('crypto-js');
+//const md5 = crypto.createHash('md5');
+const md5 = require('crypto-js/md5');
+const hmacsha1 = require('crypto-js/hmac-sha1');
 
 exports.getSignature = function(params, timestamp, client_secret){
         if(params==undefined || params==null)
@@ -11,9 +13,10 @@ exports.getSignature = function(params, timestamp, client_secret){
         if(client_secret==undefined || client_secret==null || client_secret=='')
             throw new Error('client_secret must not be null or empty,');
 
-        const hmac = crypto.createHmac('sha1', client_secret);
+        //const hmac = crypto.createHmac('sha1', client_secret);
 
-        let md5_str = md5.update(timestamp+client_secret).digest('hex').toUpperCase();
+        let md5_str = md5(timestamp+client_secret).toString().toUpperCase();
+        console.log(md5_str);
         let keys = [];
         for(let key in params){
             keys.push(key);
@@ -26,7 +29,7 @@ exports.getSignature = function(params, timestamp, client_secret){
             paramStr+='&'+t+'='+params[t];
         }
 
-        let signature = hmac.update(paramStr+md5_str).digest('hex').toUpperCase();
+        let signature = hmacsha1(paramStr+md5_str, client_secret).toString().toUpperCase(); //hmac.update(paramStr+md5_str).digest('hex').toUpperCase();
 
         return signature;
 }

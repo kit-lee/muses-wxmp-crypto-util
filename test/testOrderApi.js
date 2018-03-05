@@ -7,7 +7,7 @@ const https = require('https');
 var qs = require('querystring');
 var data = {
     appid:'wxmp_8p9xfnhh',
-    openid:'kit'
+    jscode:'0713CYIb0jSdZs1zkBLb0fySIb03CYIp'
 }
 var ts = new Date().getTime();
 var sign = sdk.getSignature(
@@ -20,7 +20,7 @@ var params = qs.stringify(data);
 var options={
     hostname:'face.wxmp.91zmt.com',
     port:443,
-    path:'/api/v1/orders?'+params,
+    path:'/api/v1/session?'+params,
     method:'GET',
     headers:{
         //'Content-Type':'application/x-www-form-urlencoded',

@@ -1,11 +1,16 @@
 {
   "name": "muses-wxmp-crypto-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The REST API crypto util of Muses weixin mini-program backend service.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "gulp",
     "test": "node ./test/example.js"
+  },
+  "homepage": "https://github.com/kit-lee/muses-wxmp-crypto-util",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kit-lee/muses-wxmp-crypto-util.git"
   },
   "keywords": [
     "weixin",

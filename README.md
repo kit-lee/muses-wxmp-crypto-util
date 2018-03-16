@@ -12,7 +12,7 @@ git clone https://github.com/kit-lee/muses-wxmp-crypto-util.git
 
 
 
-### 使用
+### 基本使用
 
 引入已压缩的js
 
@@ -37,6 +37,26 @@ var client_secret = 'client_secret';
 var sign = sdk.getSignature(params, new Date().getTime(), client_secret);
 console.log('sign='+sign);
 ```
+### 在NodeJS中使用
+
+在package.json中添加项目引用
+
+```json
+"dependencies": {
+    "muses-wxmp-crypto-util": "git+https://github.com/kit-lee/muses-wxmp-crypto-util.git"
+  },
+```
+
+安装开发包
+```
+npm install muses-wxmp-crypto-util
+```
+引用JS
+```javascript
+const sdk = require('muses-wxmp-crypto-util');
+```
+
+
 
 #### getSignature参数说明
 

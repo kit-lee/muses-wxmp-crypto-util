@@ -1,0 +1,1 @@
+module.exports = require('./dist/muses-wxmp-crypto-util.min');
